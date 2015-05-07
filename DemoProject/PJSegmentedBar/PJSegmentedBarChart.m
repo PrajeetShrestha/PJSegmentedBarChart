@@ -40,6 +40,7 @@
         topSegmentNumbers = [NSMutableArray new];
         bottomSegmentNumbers = [NSMutableArray new];
         horizontalLabelsForBar = [NSMutableArray new];
+        self.mainBarColor = [UIColor new];
         
         self.backgroundColor = [UIColor whiteColor];
         
@@ -47,6 +48,7 @@
         self.padding = 10;
         self.barWidth = 50;
         self.scaleHeightOfyAxis = 7;
+        self.segmented = NO;
         
     }
     return self;
@@ -66,8 +68,13 @@
     
     [self scaleChartDataWithRespectToItsHeight];
     [self plotAxes];
+    if (self.segmented) {
+        [self plotBarsWithSegments];
+    } else {
+        [self plotBars];
+}
     //[self plotBars];
-    [self plotBarsWithSegments];
+    
     [self plotHorizontalLabels];
     [self plotVerticalLabels];
 }
@@ -90,9 +97,8 @@
     __block CGFloat xPosition = self.padding;
     for (NSNumber *barData in scaledBarData) {
         UIView *bar = [UIView new];
-        
+        bar.backgroundColor = self.mainBarColor;
         bar.frame = CGRectMake(xPosition, maxY, dynamicWidthOfBar , -barData.floatValue);
-        bar.backgroundColor = [UIColor blackColor];
         [self addSubview:bar];
         [barMidXPositions addObject:[NSNumber numberWithFloat:CGRectGetMidX(bar.frame)]];
         bar.frame = CGRectMake(xPosition, maxY, dynamicWidthOfBar ,0);
@@ -116,6 +122,7 @@
         NSNumber *topSegmentValue = topSegmentNumbers[[scaledBarData indexOfObject:barData]];
         segmentedBar.topSegmentHeight.constant = topSegmentValue.floatValue * scaleFactor;
         segmentedBar.topTitle.text = topSegmentValue.stringValue;
+        
         if (segmentedBar.topSegmentHeight.constant < 14) {
             segmentedBar.topTitle.hidden = YES;
         } else {
@@ -167,9 +174,10 @@
     CGFloat scale = maxBarData/self.scaleHeightOfyAxis;
     CGFloat yAxisScaleFactor = height/self.scaleHeightOfyAxis;
     CGFloat yCoordinate = minY;
-    
-    for (int labelValue = (int)maxBarData; labelValue >= scale; labelValue -= scale) {
-        NSString *yAxisLabelTitle = [NSString stringWithFormat:@"%d",labelValue];
+    int i = 0;
+    for (float labelValue = (float)maxBarData; labelValue > i; labelValue -= scale) {
+//        NSLog(@"%d %f",labelValue,scale);
+        NSString *yAxisLabelTitle = [NSString stringWithFormat:@"%d",(int)labelValue];
         UILabel *yAxisLabel = [UILabel new];
         yAxisLabel.text = yAxisLabelTitle;
         [yAxisLabel sizeToFit];
@@ -188,6 +196,10 @@
         [self addSubview:verticalLabelView];
         [self addSubview:yAxisLabel];
         yCoordinate += yAxisScaleFactor;
+        i++;
+        if (i == self.scaleHeightOfyAxis) {
+            break;
+        }
     }
 }
 
@@ -199,7 +211,6 @@
 }
 
 - (void)scaleChartDataWithRespectToItsHeight {
-    
     CGFloat scaleFactor = [self findScaleFactorOfBarData];
     for (NSNumber *data in barTotalValue) {
         NSNumber *scaledData = [NSNumber numberWithFloat:data.floatValue * scaleFactor];

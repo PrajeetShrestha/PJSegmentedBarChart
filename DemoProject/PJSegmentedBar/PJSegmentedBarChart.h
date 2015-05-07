@@ -16,5 +16,7 @@
 @property (nonatomic) CGFloat scaleHeightOfyAxis;
 @property (nonatomic) CGFloat barWidth;
 @property (nonatomic) CGFloat padding;
+@property (nonatomic) BOOL segmented;
+@property (nonatomic)UIColor *mainBarColor;
 - (void)addChart;
 @end

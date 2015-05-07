@@ -23,8 +23,7 @@
     
     PJSegmentedBarChart *chart = [PJSegmentedBarChart new];
     [self.chartContainer addSubview:chart];
-    //chart.frame = self.chartContainer.bounds;
-    chart.frame = CGRectMake(10, 10, 220, 100);
+    chart.frame = self.chartContainer.bounds;
     chart.data = @[
                    @{kTopSegment:@50,kBotSegment:@50,kBarLabel:@"Assigned"},
                    @{kTopSegment:@50,kBotSegment:@20,kBarLabel:@"Completed"},

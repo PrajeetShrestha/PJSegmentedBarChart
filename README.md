@@ -2,7 +2,7 @@
 Segmented Barchart for iOS
 Import PJSegmentedBarChart In you view controller  and add PJSegmentedBarChart that's it. Sample usage makes it more clear. Thanx. 
 
-P.S. You need to import #SegmentedBarView.h, SegmentedBarView.m and SegmentedBarView.xib in your project as well along with PJSegmentedBarChart.h and PJSegmentedBarChart.m# . For faster development I have used .xib file to display segmented bar chart. It will be all made through codes later on. Thanx again. 
+P.S. You need to import ###SegmentedBarView.h, SegmentedBarView.m and SegmentedBarView.xib in your project as well along with PJSegmentedBarChart.h and PJSegmentedBarChart.m### . For faster development I have used .xib file to display segmented bar chart. It will be all made through codes later on. Thanx again. 
 
 prajeet.shrestha@gmail.com
 USAGE SAMPLE

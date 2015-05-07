@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SegmentedBarView">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="200"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8HE-Mo-pH8" userLabel="Top Segment">
+                    <rect key="frame" x="0.0" y="0.0" width="50" height="100"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3u-Y2-dWT" userLabel="TopTitle">
+                            <rect key="frame" x="8" y="42" width="34" height="16"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.6588235294117647" green="0.33333333333333331" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="centerY" secondItem="z3u-Y2-dWT" secondAttribute="centerY" id="9DJ-aG-a8T"/>
+                        <constraint firstAttribute="height" constant="100" id="FvI-Rb-LWv"/>
+                        <constraint firstAttribute="centerX" secondItem="z3u-Y2-dWT" secondAttribute="centerX" id="vPl-sc-K1G"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c7K-zx-hS7" userLabel="Bottom Segment">
+                    <rect key="frame" x="0.0" y="100" width="50" height="100"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omZ-Fs-GRU">
+                            <rect key="frame" x="8" y="42" width="34" height="16"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.83529411764705885" green="0.52549019607843139" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="centerX" secondItem="omZ-Fs-GRU" secondAttribute="centerX" id="Lh9-Zs-a6b"/>
+                        <constraint firstAttribute="height" constant="100" id="dQ2-CO-aKC"/>
+                        <constraint firstAttribute="centerY" secondItem="omZ-Fs-GRU" secondAttribute="centerY" id="gPd-cs-9HC"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="c7K-zx-hS7" secondAttribute="bottom" id="3CK-dd-70p"/>
+                <constraint firstAttribute="trailing" secondItem="c7K-zx-hS7" secondAttribute="trailing" id="CJD-Ce-f1a"/>
+                <constraint firstItem="c7K-zx-hS7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="EX6-2f-7Om"/>
+                <constraint firstAttribute="trailing" secondItem="8HE-Mo-pH8" secondAttribute="trailing" id="Ljo-c4-avy"/>
+                <constraint firstItem="8HE-Mo-pH8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="R4E-2O-XkX"/>
+                <constraint firstItem="c7K-zx-hS7" firstAttribute="top" secondItem="8HE-Mo-pH8" secondAttribute="bottom" id="eJi-JC-oBF"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="botTitle" destination="omZ-Fs-GRU" id="cgz-LJ-EkV"/>
+                <outlet property="bottomSegmentHeight" destination="dQ2-CO-aKC" id="oTm-Ij-0RO"/>
+                <outlet property="bottomSegmentView" destination="c7K-zx-hS7" id="IQj-G3-nz3"/>
+                <outlet property="topSegmentHeight" destination="FvI-Rb-LWv" id="BbM-a7-zCx"/>
+                <outlet property="topSegmentView" destination="8HE-Mo-pH8" id="qf0-Br-xKA"/>
+                <outlet property="topTitle" destination="z3u-Y2-dWT" id="L46-hY-v6w"/>
+            </connections>
+        </view>
+    </objects>
+</document>

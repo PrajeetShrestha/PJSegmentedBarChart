@@ -2,7 +2,8 @@
 Segmented Barchart for iOS
 
 USAGE SAMPLE
-```- (void)viewDidLoad {
+```
+- (void)viewDidLoad {
     [super viewDidLoad];
     
     PJSegmentedBarChart *chart = [PJSegmentedBarChart new];
@@ -18,4 +19,5 @@ USAGE SAMPLE
     chart.scaleHeightOfyAxis = 10;
     chart.padding = 12;
     [chart addChart];
-}```
+}
+```

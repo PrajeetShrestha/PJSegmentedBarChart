@@ -54,3 +54,7 @@ USAGE SAMPLE
 
 }
 ```
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/PrajeetShrestha/pjsegmentedbarchart/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
